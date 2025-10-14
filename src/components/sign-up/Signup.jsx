@@ -282,8 +282,8 @@ import {
     TextField,
     Typography,
 } from '@mui/material';
-import image from '../../assets/Mask group.png';
-import logo from '../../assets/Layer 1.png';
+import image from '../../assets/signup/Mask group.png';
+import logo from '../../assets/signup/Layer 1.png';
 
 const Signup = () => {
     const {
@@ -298,6 +298,7 @@ const Signup = () => {
 
     return (
         <Box
+            id={"signup"}
             sx={{
                 minHeight: '100vh',
                 backgroundColor: '#000',
