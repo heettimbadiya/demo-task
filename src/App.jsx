@@ -1,11 +1,13 @@
 import './App.css'
-import SignupPage from "./components/SignupPage.jsx";
-
+import {Routes,Router,Route} from "react-router-dom";
+import SignUpPage from "./pages/sign-up/SignUpPage.jsx";
 function App() {
 
   return (
     <>
-        <SignupPage/>
+            <Routes>
+                <Route path="/sign-up" element={<SignUpPage />} />
+            </Routes>
     </>
   )
 }

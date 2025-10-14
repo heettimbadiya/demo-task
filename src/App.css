@@ -53,3 +53,8 @@
 body {
     background-color: #000;
 }
+
+.MuiGrid-root {
+    -webkit-flex-wrap: unset !important;
+    flex-wrap: unset !important;
+}
