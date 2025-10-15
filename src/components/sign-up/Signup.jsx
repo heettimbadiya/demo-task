@@ -312,8 +312,10 @@ const Signup = () => {
                 {/* Left Side - Image */}
                 <Grid
                     item
-                    xs={12}
-                    md={6}
+                    size={{
+                        xs:12,
+                        md:6
+                    }}
                     sx={{
                         overflow: 'hidden',
                         display: { xs: 'none', md: 'flex' },
@@ -336,8 +338,10 @@ const Signup = () => {
                 {/* Right Side - Signup Form */}
                 <Grid
                     item
-                    xs={12}
-                    md={6}
+                    size={{
+                        xs:12,
+                        md:6
+                    }}
                     sx={{
                         backgroundColor: '#1a1a1a',
                         display: 'flex',

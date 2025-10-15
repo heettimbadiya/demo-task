@@ -96,11 +96,11 @@ const AccountUI = () => {
             >
                 <Grid container spacing={3} sx={{flexWrap:{xs:'wrap !important',md:'nowrap !important'},justifyContent:'center'}}>
                     {/* Sidebar */}
-                        <Grid item xs={12} md={4} sx={{width:{xs:"100%",md:'unset'}}}>
+                        <Grid item size={{xs:12, md:4}} sx={{width:{xs:"100%",md:'unset'}}}>
                             {sidebar}
                         </Grid>
 
-                    <Grid item xs={12} md={8} width={'100%'} sx={{px: {md:8}}}>
+                    <Grid item size={{xs:12, md:8}} width={'100%'} sx={{px: {md:8}}}>
                         {/* Logged In Section */}
                         <Box
                             sx={{
