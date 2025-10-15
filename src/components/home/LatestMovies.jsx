@@ -28,9 +28,9 @@ export default function LatestMovies() {
     const nextRef = useRef(null);
 
     return (
-        <Box sx={{ display: 'flex', bgcolor: '#000', color: '#fff', py: 4 }}>
+        <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, bgcolor: '#000', color: '#fff', py: 4 }}>
             {/* Left rail */}
-            <Box sx={{ width: 320, px: 3 }}>
+            <Box sx={{ width: { xs: '100%', md: 320 }, px: 3, mb: { xs: 3, md: 0 } }}>
                 <Box sx={{ display: "flex", alignItems: 'center', justifyContent: 'space-between', mb: 1 }}>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
                         <Typography sx={{ fontWeight: 700, fontSize: 18, mr: 1 }}>Upcoming movies</Typography>
@@ -51,7 +51,7 @@ export default function LatestMovies() {
                         swiper.params.navigation.prevEl = prevRef.current;
                         swiper.params.navigation.nextEl = nextRef.current;
                     }}
-                    style={{ height: 540 }}
+                    style={{ height: 540, maxWidth: '100%' }}
                 >
                     {items.map((item, idx) => (
                         <SwiperSlide key={idx}>
@@ -128,34 +128,34 @@ export default function LatestMovies() {
                     backgroundImage: `url(${back})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
-                    p: 6,
+                    p: { xs: 3, md: 6 },
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
                 }}
             >
-                <Box sx={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(0,0,0,0.9) 20%, transparent 80%)' }} />
-                <Box sx={{ position: 'relative', maxWidth: 600 }}>
-                    <Typography variant="h2" fontWeight={900} mb={2}>
+                <Box sx={{ position: 'absolute', inset: 0, background: { xs: 'linear-gradient(to bottom, rgba(0,0,0,0.9) 20%, transparent 80%)', md: 'linear-gradient(to right, rgba(0,0,0,0.9) 20%, transparent 80%)' } }} />
+                <Box sx={{ position: 'relative', maxWidth: { xs: '100%', md: 600 } }}>
+                    <Typography variant="h2" fontWeight={900} mb={2} sx={{ fontSize: { xs: 32, sm: 40, md: 48 } }}>
                         VENOM
                     </Typography>
-                    <Box display="flex" alignItems="center" gap={1} mb={2}>
+                    <Box display="flex" alignItems="center" gap={1} mb={2} sx={{ flexWrap: 'wrap' }}>
                         <Rating value={4.3} precision={0.1} readOnly sx={{ color: '#f5c518' }} />
                         <Typography>4.3</Typography>
                         <Chip label="IMDb" size="small" sx={{ bgcolor: '#f5c518', color: '#000' }} />
                         <Chip label="2hr : 10min" size="small" sx={{ bgcolor: '#333', color: '#fff' }} />
                     </Box>
-                    <Typography variant="body1" color="#ccc" mb={3}>
+                    <Typography variant="body1" color="#ccc" mb={3} sx={{ fontSize: { xs: 14, md: 16 } }}>
                         In John Wick: Chapter 4, the titular assassin embarks on his most dangerous journey yet as he
                         seeks to dismantle the High Table, a shadowy organization controlling the criminal underworld.
                     </Typography>
                     <Typography variant="subtitle2" color="#999">
                         Genres: <Typography component="span" color="#fff">Action, Thriller</Typography>
                     </Typography>
-                    <Typography variant="subtitle2" color="#999" mb={4}>
+                    <Typography variant="subtitle2" color="#999" mb={4} sx={{ display: 'block' }}>
                         Tags: <Typography component="span" color="#fff">Action, Assassin, Thriller</Typography>
                     </Typography>
-                    <Box display="flex" gap={2}>
+                    <Box display="flex" gap={2} sx={{ flexWrap: 'wrap' }}>
                         <Button variant="contained" sx={{ bgcolor: '#e50914', '&:hover': { bgcolor: '#b20710' }, borderRadius: 2, px: 3 }}>Notify me</Button>
                         <IconButton
                             sx={{

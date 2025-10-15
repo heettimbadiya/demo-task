@@ -19,9 +19,9 @@ const hero = {
 
 return (
 <Box sx={{ background: '#000', color: '#fff' }}>
-    <Box sx={{ position: 'relative', height: '100vh', overflow: 'hidden', pt: { xs: 7, md: 9 } }}>
+    <Box sx={{ position: 'relative', height: { xs: '80vh', md: '100vh' }, overflow: 'hidden', pt: { xs: 7, md: 9 } }}>
         {/* Background image */}
-        <Box sx={{ position: 'absolute', inset: 0, '& img': { width: '100%', height: '100%', objectFit: 'cover', objectPosition: '75% center', filter: 'brightness(0.9)' } }}>
+        <Box sx={{ position: 'absolute', inset: 0, '& img': { width: '100%', height: '100%', objectFit: 'cover', objectPosition: { xs: 'center', md: '75% center' }, filter: 'brightness(0.9)' } }}>
             <img src={hero.image} alt={hero.title} />
         </Box>
         {/* Left gradient overlay */}
@@ -32,7 +32,8 @@ return (
             <Box sx={{ maxWidth: 720 }}>
                 {/* Title */}
                 <Stack spacing={1} sx={{ mb: 1 }}>
-                    <img src={hero.texti} width={"545px"}/>
+                    <Box component="img" src={hero.texti} alt="title"
+                         sx={{ width: { xs: '70%', sm: '60%', md: 545 }, maxWidth: '100%', height: 'auto' }} />
                 </Stack>
 
                 {/* Rating / meta row */}
@@ -48,16 +49,16 @@ return (
                 </Stack>
 
                 {/* Description */}
-                <Typography sx={{ color: '#ffffff', fontSize: 18, lineHeight: 1.6, mb: 2 , fontWeight: 700}}>
+                <Typography sx={{ color: '#ffffff', fontSize: { xs: 16, md: 18 }, lineHeight: 1.6, mb: 2 , fontWeight: 700}}>
                     {hero.description}
                 </Typography>
 
                 {/* Genres & Tags */}
-                <Stack direction="row" spacing={1} sx={{ mb: 0.5 }}>
+                <Stack direction="row" spacing={1} sx={{ mb: 0.5, flexWrap: 'wrap' }}>
                     <Typography sx={{ color: '#e53935', fontSize: 18 }}>Genres</Typography>
                     <Typography sx={{ color: '#ddd', fontSize: 18 }}>{hero.genres.join(', ')}</Typography>
                 </Stack>
-                <Stack direction="row" spacing={1}>
+                <Stack direction="row" spacing={1} sx={{ flexWrap: 'wrap' }}>
                     <Typography sx={{ color: '#e53935', fontSize: 18 }}>Tags</Typography>
                     <Typography sx={{ color: '#ddd', fontSize: 18 }}>{hero.tags.join(', ')}</Typography>
                 </Stack>
@@ -71,7 +72,7 @@ return (
         </Box>
 
         {/* Bottom progress bar */}
-        <Box sx={{ position: 'absolute', left: "70%", right: 0, bottom: 18, zIndex: 2, px: { xs: 2, md: 6 } }}>
+        <Box sx={{ display: { xs: 'none', md: 'block' }, position: 'absolute', left: "70%", right: 0, bottom: 18, zIndex: 2, px: { xs: 2, md: 6 } }}>
             <Box sx={{ height: 3,width: '25%', backgroundColor: 'rgba(255,255,255,0.25)', borderRadius: 2 }}>
                 <Box sx={{ width: '15%', height: '100%', backgroundColor: '#c62828', borderRadius: 2 }} />
             </Box>

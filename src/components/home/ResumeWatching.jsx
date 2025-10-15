@@ -48,35 +48,25 @@ export default function ResumeWatching() {
                 modules={[Navigation]}
                 slidesPerView={6}
                 spaceBetween={16}
+                slidesOffsetBefore={12}
+                slidesOffsetAfter={12}
                 breakpoints={{
-                    0: { slidesPerView: 2.1, spaceBetween: 12 },
-                    600: { slidesPerView: 3.1, spaceBetween: 14 },
-                    900: { slidesPerView: 4.1, spaceBetween: 16 },
-                    1200: { slidesPerView: 5.1, spaceBetween: 16 },
-                    1536: { slidesPerView: 6.1, spaceBetween: 18     },
+                    0: { slidesPerView:1, spaceBetween:5, slidesOffsetBefore: 12, slidesOffsetAfter: 12 },
+                    500: { slidesPerView:2, spaceBetween:5, slidesOffsetBefore: 12, slidesOffsetAfter: 12 },
+                    766: { slidesPerView: 3, spaceBetween: 14, slidesOffsetBefore: 14, slidesOffsetAfter: 14 },
+                    1196: { slidesPerView: 4, spaceBetween: 16, slidesOffsetBefore: 16, slidesOffsetAfter: 16 },
+                    1474: { slidesPerView: 5, spaceBetween: 16, slidesOffsetBefore: 16, slidesOffsetAfter: 16 },
+                    1730: { slidesPerView: 6, spaceBetween: 20, slidesOffsetBefore: 18, slidesOffsetAfter: 18 },
                 }}
                 style={{ paddingBottom: 8 }}
             >
                 {items.map((item, idx) => (
                     <SwiperSlide key={idx} style={{ height: 'auto' }}>
                         <Box sx={{ position: 'relative', pr: 0.5 }}>
-                            <Typography
-                                sx={{
-                                    position: 'absolute',
-                                    top: -20,
-                                    left: -10,
-                                    fontSize: 96,
-                                    fontWeight: 900,
-                                    color: 'white',
-                                    zIndex: 0,
-                                }}
-                            >
-                                {(idx + 1).toString().padStart(2, '0')}
-                            </Typography>
                             <Card
                                 sx={{
-                                    width: 270,
-                                    height: 380,
+                                    width: { xs: 200, sm: 220, md: 270 },
+                                    height: { xs: 300, sm: 330, md: 380 },
                                     borderRadius: 2,
                                     bgcolor: '#111',
                                     position: 'relative',
@@ -111,7 +101,7 @@ export default function ResumeWatching() {
                                     }}
                                 >
                                     <Box>
-                                        <Typography sx={{ fontSize: 24, fontWeight: 700, lineHeight: 1.2,color: '#ffffff' }}>{item.title}</Typography>
+                                        <Typography sx={{ fontSize: { xs: 18, md: 24 }, fontWeight: 700, lineHeight: 1.2,color: '#ffffff' }}>{item.title}</Typography>
                                         <Typography sx={{ fontSize: 12, color: '#cfcfcf', mb: 1 }}>{item.duration}</Typography>
                                         <Button size="small" variant="contained" sx={{ textTransform: 'none', bgcolor: '#2f2f2f', '&:hover': { bgcolor: '#3a3a3a' } }}>Watch</Button>
                                     </Box>

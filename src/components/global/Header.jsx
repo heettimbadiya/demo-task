@@ -11,6 +11,7 @@ import {
     ListItem,
     ListItemText,
     Divider,
+    Button,
 } from '@mui/material';
 import {
     Menu as MenuIcon,
@@ -80,19 +81,23 @@ const Header = () => {
                 <Toolbar sx={{ justifyContent: 'space-between', py: 2, px: { xs: 2, md: 4 } }}>
                     {/* Left Side: Menu Icon (mobile) + Logo */}
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                        <IconButton
-                            edge="start"
-                            color="inherit"
-                            aria-label="menu"
+                        <Button
                             onClick={handleDrawerToggle}
-                            sx={{ display: { xs: 'flex', md: 'none' } }}
+                            startIcon={<MenuIcon />}
+                            sx={{
+                                color: '#fff',
+                                borderColor: 'rgba(255,255,255,0.3)',
+                                display: { xs: 'flex', lg: 'none' },
+                                textTransform: 'none',
+                                mr: 1
+                            }}
+                            size="small"
                         >
-                            <MenuIcon />
-                        </IconButton>
+                        </Button>
                         <img src={logo} alt="Speedo Prime" style={{ height: '50px' }} />
                         <Box
                             sx={{
-                                display: { xs: 'none', md: 'flex' },
+                                display: { xs: 'none', lg: 'flex' },
                                 gap: 3,
                                 flex: 1,
                                 justifyContent: 'center',

@@ -15,3 +15,5 @@ body {
 /*    -webkit-flex-wrap: unset !important;*/
 /*    flex-wrap: unset !important;*/
 /*}*/
+
+/* Swiper gaps controlled via spaceBetween; no per-slide padding to avoid crop */
