@@ -4,7 +4,7 @@ import AppleIcon from '@mui/icons-material/Apple';
 import AndroidIcon from '@mui/icons-material/Android';
 import logo from '../../assets/signup/Layer 1.png';
 
-function Footer() {
+function Footer({show}) {
     const footerLinks = {
         quickLinks: [
             {text: 'About Us', href: '#'},
@@ -39,9 +39,9 @@ function Footer() {
 
     return (
         <Box sx={{backgroundColor: '#000', color: '#fff', pt: 6, pb: 3 , px: {xs:2 , md:5 , lg:8}}}>
-            <Grid container spacing={4}>
+            { show && <Grid container spacing={4}>
                 {/* Logo and Contact Section */}
-                <Grid item size={{xs: 12,md:4, lg: 1.8}}>
+                <Grid item size={{xs: 12, md: 4, lg: 1.8}}>
                     <Box sx={{mb: 3}}>
                         <Box sx={{display: 'flex', alignItems: 'center', mb: 2}}>
                             <img src={logo} alt={'logo'}/>
@@ -64,7 +64,7 @@ function Footer() {
                 </Grid>
 
                 {/* Quick Links */}
-                <Grid item size={{xs: 12,md:4, lg: 1.8}}>
+                <Grid item size={{xs: 12, md: 4, lg: 1.8}}>
                     <Typography variant="h6" sx={{mb: 2, fontWeight: 600, fontSize: '16px'}}>
                         Quick Links
                     </Typography>
@@ -87,7 +87,7 @@ function Footer() {
                 </Grid>
 
                 {/* Movies To Watch 1 */}
-                <Grid item size={{xs: 12,md:4, lg: 1.8}}>
+                <Grid item size={{xs: 12, md: 4, lg: 1.8}}>
                     <Typography variant="h6" sx={{mb: 2, fontWeight: 600, fontSize: '16px'}}>
                         Movies To Watch
                     </Typography>
@@ -110,7 +110,7 @@ function Footer() {
                 </Grid>
 
                 {/* Movies To Watch 2 */}
-                <Grid item size={{xs: 12,md:4, lg: 1.8}}>
+                <Grid item size={{xs: 12, md: 4, lg: 1.8}}>
                     <Typography variant="h6" sx={{mb: 2, fontWeight: 600, fontSize: '16px'}}>
                         Movies To Watch
                     </Typography>
@@ -133,7 +133,7 @@ function Footer() {
                 </Grid>
 
                 {/* About Company and Download Section */}
-                <Grid item size={{xs: 12,md:4, lg: 1.8}}>
+                <Grid item size={{xs: 12, md: 4, lg: 1.8}}>
                     <Typography variant="h6" sx={{mb: 2, fontWeight: 600, fontSize: '16px'}}>
                         About Company
                     </Typography>
@@ -154,7 +154,7 @@ function Footer() {
                         ))}
                     </Box>
                 </Grid>
-                <Grid item size={{xs: 12,md:4 ,lg: 3}}>
+                <Grid item size={{xs: 12, md: 4, lg: 3}}>
                     <Typography variant="body2" sx={{mb: 2, fontSize: '14px', fontWeight: 600}}>
                         Download the app
                         <br/>
@@ -195,7 +195,7 @@ function Footer() {
                         </Button>
                     </Box>
                 </Grid>
-            </Grid>
+            </Grid>}
 
             {/* Bottom Section */}
             <Box

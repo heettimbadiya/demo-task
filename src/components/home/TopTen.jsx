@@ -4,31 +4,25 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import l1 from "../../assets/home/l1.png";
-import l2 from "../../assets/home/l2.png";
-import l3 from "../../assets/home/l3.png";
-import l4 from "../../assets/home/l4.png";
-import l5 from "../../assets/home/l5.png";
-import l6 from "../../assets/home/l6.png";
-import l7 from "../../assets/home/l7.png";
-import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import t1 from "../../assets/home/t1.png";
+import t2 from "../../assets/home/t2.png";
+import t3 from "../../assets/home/t3.png";
+import t4 from "../../assets/home/t4.png";
+import t5 from "../../assets/home/t5.png";
+import t6 from "../../assets/home/t6.png";
+import t7 from "../../assets/home/t7.png";
 
-const posters = [l1, l2, l3, l4, l5, l6, l7];
+const posters = [t1, t2, t3, t4, t5, t6, t7];
 const items = posters.map((src, index) => ({
     src,
     title: `Movie ${index + 1}`,
     duration: '2hr : 20min',
 }));
 
-export default function UpcomingMovies() {
-
+export default function TopTen() {
     return (
         <Box sx={{ bgcolor: '#000', color: '#fff', px: 3, py: 4 }}>
-            <Box sx={{display: 'flex'}}>
-                <Typography sx={{ fontWeight: 700, mb: 2, fontSize: 18, marginRight: "10px" }}>Latest movies</Typography>
-                <Typography>See more</Typography>
-                <NavigateNextIcon/>
-            </Box>
+            <Typography sx={{ fontWeight: 700, mb: 2, fontSize: 18 }}>Top 10 movies</Typography>
             <Swiper
                 modules={[Navigation]}
                 slidesPerView={6}
@@ -107,3 +101,5 @@ export default function UpcomingMovies() {
         </Box>
     );
 }
+
+

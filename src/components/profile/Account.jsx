@@ -85,13 +85,15 @@ const AccountUI = () => {
     );
 
     return (
+        <>
         <Container maxWidth={'xl'}>
             <Box
                 sx={{
                     bgcolor: "#000",
-                    minHeight: "100vh",
+                    minHeight: "70vh",
                     color: "white",
                     py: isMobile ? 2 : 4,
+                    mt:15
                 }}
             >
                 <Grid container spacing={3} sx={{flexWrap:{xs:'wrap !important',md:'nowrap !important'},justifyContent:'center'}}>
@@ -219,6 +221,7 @@ const AccountUI = () => {
                 </Grid>
             </Box>
         </Container>
+        </>
     );
 };
 

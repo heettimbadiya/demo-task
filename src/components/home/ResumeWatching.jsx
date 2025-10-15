@@ -1,34 +1,49 @@
+// import React from 'react';
+// import { Box, Typography, Stack, Card, CardMedia, CardContent, Button } from '@mui/material';
+// import { Swiper, SwiperSlide } from 'swiper/react';
+// import { Navigation } from 'swiper/modules';
+// import 'swiper/css';
+// import 'swiper/css/navigation';
+//
+// const items = [
+//     {
+//         title: 'One Piece',
+//         duration: '2hr : 20min',
+//         image: 'https://images.unsplash.com/photo-1612036782180-6f0b6f3b6d53?w=800&h=1200&fit=crop',
+//         primary: true,
+//     },
+//     { title: 'Pirates', duration: '2hr : 15min', image: 'https://images.unsplash.com/photo-1520986606214-8b456906c813?w=800&h=1200&fit=crop' },
+//     { title: 'Fast & Furious', duration: '2hr : 05min', image: 'https://images.unsplash.com/photo-1511300636408-a63a89df3482?w=800&h=1200&fit=crop' },
+//     { title: 'Godzilla', duration: '2hr : 10min', image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=1200&fit=crop' },
+//     { title: 'Peaky Blinders', duration: '1hr : 00min', image: 'https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=800&h=1200&fit=crop' },
+//     { title: 'John Wick', duration: '2hr : 22min', image: 'https://images.unsplash.com/photo-1542204625-e3d64a37f72a?w=800&h=1200&fit=crop' },
+// ];
+
 import React from 'react';
 import { Box, Typography, Stack, Card, CardMedia, Button } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import l1 from "../../assets/home/l1.png";
-import l2 from "../../assets/home/l2.png";
-import l3 from "../../assets/home/l3.png";
-import l4 from "../../assets/home/l4.png";
-import l5 from "../../assets/home/l5.png";
-import l6 from "../../assets/home/l6.png";
-import l7 from "../../assets/home/l7.png";
-import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import r1 from "../../assets/home/r1.png";
+import r2 from "../../assets/home/r2.png";
+import r3 from "../../assets/home/r3.png";
+import r4 from "../../assets/home/r4.png";
+import r5 from "../../assets/home/r5.png";
+import r6 from "../../assets/home/r6.png";
+import r7 from "../../assets/home/r7.png";
 
-const posters = [l1, l2, l3, l4, l5, l6, l7];
+const posters = [r1, r2, r3, r4, r5, r6, r7];
 const items = posters.map((src, index) => ({
     src,
     title: `Movie ${index + 1}`,
     duration: '2hr : 20min',
 }));
 
-export default function UpcomingMovies() {
-
+export default function ResumeWatching() {
     return (
         <Box sx={{ bgcolor: '#000', color: '#fff', px: 3, py: 4 }}>
-            <Box sx={{display: 'flex'}}>
-                <Typography sx={{ fontWeight: 700, mb: 2, fontSize: 18, marginRight: "10px" }}>Latest movies</Typography>
-                <Typography>See more</Typography>
-                <NavigateNextIcon/>
-            </Box>
+            <Typography sx={{ fontWeight: 700, mb: 2, fontSize: 18 }}>Resume watching</Typography>
             <Swiper
                 modules={[Navigation]}
                 slidesPerView={6}
@@ -52,7 +67,7 @@ export default function UpcomingMovies() {
                                     left: -10,
                                     fontSize: 96,
                                     fontWeight: 900,
-                                    color: 'rgba(255,255,255,0.06)',
+                                    color: 'white',
                                     zIndex: 0,
                                 }}
                             >
@@ -80,6 +95,8 @@ export default function UpcomingMovies() {
                                     alt={`Top ${idx + 1}`}
                                     sx={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform .3s ease' }}
                                 />
+
+                                {/* Hover overlay */}
                                 <Box
                                     className="overlay"
                                     sx={{
@@ -94,7 +111,7 @@ export default function UpcomingMovies() {
                                     }}
                                 >
                                     <Box>
-                                        <Typography sx={{ fontSize: 24, fontWeight: 700, lineHeight: 1.2, color: "white" }}>{item.title}</Typography>
+                                        <Typography sx={{ fontSize: 24, fontWeight: 700, lineHeight: 1.2,color: '#ffffff' }}>{item.title}</Typography>
                                         <Typography sx={{ fontSize: 12, color: '#cfcfcf', mb: 1 }}>{item.duration}</Typography>
                                         <Button size="small" variant="contained" sx={{ textTransform: 'none', bgcolor: '#2f2f2f', '&:hover': { bgcolor: '#3a3a3a' } }}>Watch</Button>
                                     </Box>
@@ -107,3 +124,5 @@ export default function UpcomingMovies() {
         </Box>
     );
 }
+
+

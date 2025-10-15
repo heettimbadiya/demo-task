@@ -20,9 +20,12 @@ import {
     Notifications as NotificationsIcon,
 } from '@mui/icons-material';
 import logo from '../../assets/signup/Layer 1.png';
+import user from "../../assets/profile/user.png"
+import {useNavigate} from "react-router-dom";
 
 const Header = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
+    const navigate = useNavigate();
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -48,6 +51,7 @@ const Header = () => {
                 {navLinks.map((text) => (
                     <ListItem button key={text}>
                         <ListItemText
+                            onClick={() => navigate('/')}
                             primary={text}
                             primaryTypographyProps={{
                                 fontSize: 16,
@@ -62,15 +66,18 @@ const Header = () => {
 
     return (
         <>
-            <AppBar
-                position="static"
+            <Box
+                position="fixed"
                 sx={{
-                    backgroundColor: '#000',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    zIndex: 10,
+                    background: 'linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0) 100%)',
                     boxShadow: 'none',
-                    borderBottom: '1px solid #1a1a1a',
                 }}
             >
-                <Toolbar sx={{ justifyContent: 'space-between', py: 1 }}>
+                <Toolbar sx={{ justifyContent: 'space-between', py: 2, px: { xs: 2, md: 4 } }}>
                     {/* Left Side: Menu Icon (mobile) + Logo */}
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                         <IconButton
@@ -82,33 +89,37 @@ const Header = () => {
                         >
                             <MenuIcon />
                         </IconButton>
-                        <img src={logo} alt="Speedo Prime" style={{ height: '40px' }} />
+                        <img src={logo} alt="Speedo Prime" style={{ height: '50px' }} />
+                        <Box
+                            sx={{
+                                display: { xs: 'none', md: 'flex' },
+                                gap: 3,
+                                flex: 1,
+                                justifyContent: 'center',
+                                ml:2
+                            }}
+                        >
+                            {navLinks.map((link) => (
+                                <Typography
+                                    key={link}
+                                    onClick={() => navigate('/')}
+                                    sx={{
+                                        color: link === 'Browse by language' ? '#ff3d3d' : '#fff',
+                                        fontSize: '16px',
+                                        fontWeight: 500,
+                                        cursor: 'pointer',
+                                        '&:hover': { color: '#ff3d3d' },
+                                        transition: 'color 0.3s',
+                                    }}
+                                >
+                                    {link}
+                                </Typography>
+                            ))}
+                        </Box>
                     </Box>
 
                     {/* Middle: Navigation Links (hidden on mobile) */}
-                    <Box
-                        sx={{
-                            display: { xs: 'none', md: 'flex' },
-                            gap: 3,
-                            flex: 1,
-                            justifyContent: 'center',
-                        }}
-                    >
-                        {navLinks.map((link) => (
-                            <Typography
-                                key={link}
-                                sx={{
-                                    color: link === 'Browse by language' ? '#ff0000' : '#fff',
-                                    fontSize: '14px',
-                                    cursor: 'pointer',
-                                    '&:hover': { color: '#ff0000' },
-                                    transition: 'color 0.3s',
-                                }}
-                            >
-                                {link}
-                            </Typography>
-                        ))}
-                    </Box>
+
 
                     {/* Right Side: Icons + Avatar */}
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
@@ -121,20 +132,23 @@ const Header = () => {
                         <IconButton sx={{ color: '#fff', display: { xs: 'none', sm: 'flex' } }}>
                             <MicIcon />
                         </IconButton>
-                        <IconButton sx={{ color: '#fff' }}>
+                        <IconButton onClick={() => navigate('/sign-up')} sx={{ color: '#fff' }}>
                             <NotificationsIcon />
                         </IconButton>
                         <Avatar
+                            src={user}
+                            onClick={() => navigate('/profile')}
                             sx={{
                                 width: 35,
                                 height: 35,
                                 backgroundColor: '#8B0000',
                                 ml: 1,
+                                cursor: 'pointer',
                             }}
                         />
                     </Box>
                 </Toolbar>
-            </AppBar>
+            </Box>
 
             {/* Drawer for Mobile */}
             <Drawer
